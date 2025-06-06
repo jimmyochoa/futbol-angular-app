@@ -1,0 +1,32 @@
+<div *ngFor="let partido of partidos">
+    <div class="row text-center my-5">
+        <div class="col">
+            <h4 class="text-decoration-underline">Fecha: </h4>
+            <p>{{partido.fecha}}</p>
+        </div>
+        <div class="col">
+            <h4 class="text-decoration-underline">Equipo Local: </h4>
+            <p>{{partido.equipo_local}}</p>
+        </div>
+        <div class="col">
+            <h4 class="text-decoration-underline">Resultado: </h4>
+            <p>{{partido.resultado}} {{partido.goles_a_favor}} - {{partido.goles_en_contra}}</p>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col" *ngFor="let jugador of partido.jugadores">
+
+            <div class="card h-100 text-center">
+                <img src="{{jugador.foto_url}}"
+                    class="card-img-top" alt="{{jugador.nombre}}">
+                <div class="card-body">
+                    <h5 class="card-title mb-1">{{jugador.nombre}}</h5>
+                    <p class="card-text text-muted small mb-0">{{jugador.posicion}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
